@@ -70,6 +70,7 @@
        for (a in listArray ) {
            listArray[a] = listArray[a].split(","); 
            for( b in listArray[a]){
+             //listArray[a][b] = 'http://52.23.229.132/2kFemale/' + listArray[a][b];
              listArray[a][b] = 'http://52.23.229.132/2kFemale/' + listArray[a][b];
            }
        }
@@ -251,14 +252,14 @@
 
     var test_ready_block = {
       type: "text",
-      text: "<div class='well'><br><p style='text-align: center; font-weight: bold; color: #3f6479; font-size: 24px;'> Great Job! :) </p><br><p>Now you are ready for the actual trials!</p><p> You will be presented with around 200 trials separated in four phases. It'll be the same task as what you just practiced, except that there are instructions between trials. There will be a short break in the half way point.</p>  <p>Remember the most important rule: <strong style='color: #3f6479;'><em> Go with your gut and respond consistently!</em></strong></p> <p>When you're ready, press the <b>Start Experiment</b> button below to begin the test. </p><br></div>",
+      text: "<div class='well'><br><p style='text-align: center; font-weight: bold; color: #3f6479; font-size: 24px;'> Great Job! :) </p><br><p>Now you are ready for the actual trials!</p><p> You will be presented with around 200 trials separated in four phases. The task is the same, except that there are no instructions between trials. You will have a short break in the half way point.</p>  <p>Remember the most important rule: <strong style='color: #3f6479;'><em> Go with your gut and respond consistently!</em></strong></p> <p>When you're ready, press the <b>Start Experiment</b> button below to begin the test. </p><br></div>",
       cont: 'Start Experiment',
       timing_post_trial: post_trial_gap
     };
 
     var break2_block = {
       type: "text",
-      text: '<div class="well"><p class="emp">Well done!</p> <p>You have finished 1/2 of the experiment. Take a short break!</p> <p>Click <span class="emp">Continue</span> when you are ready to proceed. </p> <br></div>',
+      text: '<div class="well"><p class="emp">Well done!</p> <p>You have finished half of the experiment. Take a short break!</p> <p>Click <span class="emp">Continue</span> when you are ready to proceed. </p> <br></div>',
       timing_post_trial: post_trial_gap
     };
 
@@ -270,11 +271,12 @@
 
 
     /* define test block */
-    var setNumber = counter;
+    var hitNumber = counter;
     var repNumber = counter%5+1;
-    var doublet_stim_f = readTextFile("https://raw.githubusercontent.com/amandasongmm/filesPublic/master/august/doubletPilot.txt");
+    var doublet_stim_f = readTextFile('https://raw.githubusercontent.com/amandasongmm/filesPublic/master/vicente_pair_jan/HIT'+ hitNumber.toString()+'.txt');
     var triplet_stim_f = readTextFile("https://raw.githubusercontent.com/amandasongmm/filesPublic/master/oct_triplet_only/tri_set" + setNumber.toString() + '.txt');
-    var prac_doublet_stim_f = readTextFile("https://raw.githubusercontent.com/amandasongmm/filesPublic/master/sampleMethod1/sampleMethod1_set10rep1.txt");
+    //var prac_doublet_stim_f = readTextFile("https://raw.githubusercontent.com/amandasongmm/filesPublic/master/sampleMethod1/sampleMethod1_set10rep1.txt");
+    var prac_doublet_stim_f = readTextFile("https://raw.githubusercontent.com/amandasongmm/filesPublic/master/vicente_pair_jan/HIT1.txt");
     var prac_triplet_stim_f = readTextFile("https://raw.githubusercontent.com/amandasongmm/filesPublic/master/august/tripletPractice.txt");
     function getAllImages() {
       var images = []
