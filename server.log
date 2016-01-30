@@ -16,3 +16,6 @@
 2016-01-12 12:07:04,451 /Users/Olivialinlin/anaconda2/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
 2016-01-12 12:07:04,460 /Users/Olivialinlin/anaconda2/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
 2016-01-12 12:07:04,464 /Users/Olivialinlin/anaconda2/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+Exception Exception KeyErrorKeyError: : KeyError(140706651633472,)KeyError(140706651633472,) in  in <module 'threading' from '/usr/lib/python2.7/threading.pyc'><module 'threading' from '/usr/lib/python2.7/threading.pyc'> ignored
+ ignored
+Exception KeyError:  in <module 'threading' from '/usr/lib/python2.7/threading.pyc'> ignored
