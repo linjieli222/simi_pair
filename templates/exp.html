@@ -299,24 +299,29 @@
     var triplet_stim = []
     var temp = prac_doublet_stim_f[catchy_index];
     temp.push(prac_doublet_stim_f[catchy_index+1][0]);
+    temp.push(prac_doublet_stim_f[catchy_index+1][1]);
     max = prac_doublet_stim_f.length;
 
     for ( var i = 0; i< 4; i++){
-      catchy_index = getRandomInt (0, max);
-      doublet_stim[i] = [].concat(doublet_stim_f);
+      if (i < 2){
+        doublet_stim[i] = [].concat(doublet_stim_f.slice(i*50, i*50+50));
+      }
+      else{
+        doublet_stim[i] = [].concat(doublet_stim_f.slice((i-2)*50, (i-2)*50+50));;
+      }
       doublet_stim[i].push([temp[i],temp[i]]);
       doublet_stim[i] = jsPsych.randomization.repeat(doublet_stim[i],1);
     }
     var test_doublet1_stim = doublet_stim[0];
-    var test_doublet3_stim = doublet_stim[3];
-    var test_doublet2_stim = doublet_stim[1]
-    var test_doublet4_stim = doublet_stim[2];
+    var test_doublet2_stim = doublet_stim[1];
+    var test_doublet3_stim = doublet_stim[2];
+    var test_doublet4_stim = doublet_stim[3];
 
 
-    // test_doublet1_stim = test_doublet1_stim.slice(0,1);
-    // test_doublet2_stim = test_doublet2_stim.slice(0,1);
-    // test_doublet3_stim = test_doublet3_stim.slice(0,1);
-    // test_doublet4_stim = test_doublet4_stim.slice(0,1);
+    // test_doublet1_stim = test_doublet1_stim.slice(0,2);
+    // test_doublet2_stim = test_doublet2_stim.slice(0,2);
+    // test_doublet3_stim = test_doublet3_stim.slice(0,2);
+    // test_doublet4_stim = test_doublet4_stim.slice(0,2);
 
 
     //practice with instruction blocks
